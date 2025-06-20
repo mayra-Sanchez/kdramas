@@ -1,4 +1,4 @@
-/* Detail.css - Versión Super Premium */
+/* Detail.css - Versión Super Premium (con imagen controlada) */
 
 .detail-container {
   --detail-gap: 3rem;
@@ -22,15 +22,14 @@
   }
 }
 
-/* Efecto premium para la imagen */
+/* Contenedor de imagen con tamaño controlado */
 .detail-img-container {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--img-shadow);
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: all 0.5s ease;
+  max-width: 400px; /* Tamaño máximo fijo */
+  margin: 0 auto; /* Centrado en móviles */
 }
 
 .detail-img {
@@ -39,18 +38,20 @@
   object-fit: cover;
   object-position: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
 }
 
-.detail-img-container:hover {
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+/* Solo aplicamos hover effects en desktop */
+@media (hover: hover) and (min-width: 992px) {
+  .detail-img-container:hover {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .detail-img-container:hover .detail-img {
+    transform: scale(1.05) rotate(0.5deg);
+  }
 }
 
-.detail-img-container:hover .detail-img {
-  transform: scale(1.05) rotate(0.5deg);
-}
-
-/* Badge de estado premium */
+/* Resto del CSS permanece igual */
 .detail-badge {
   position: absolute;
   top: 1.5rem;
@@ -67,7 +68,6 @@
   letter-spacing: 1px;
 }
 
-/* Contenido principal mejorado */
 .detail-info {
   padding: 0 var(--space-md);
 }
@@ -87,7 +87,6 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Metadatos con iconos */
 .detail-meta {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +114,6 @@
   font-weight: 600;
 }
 
-/* Rating premium */
 .detail-rating {
   display: inline-flex;
   align-items: center;
@@ -138,14 +136,13 @@
   color: var(--text);
 }
 
-/* Descripción con efecto de lectura */
 .detail-description {
   color: color-mix(in srgb, var(--text) 85%, transparent);
   line-height: 1.8;
   margin-bottom: 3rem;
   font-size: 1.1rem;
   position: relative;
-  max-height: 10.8em; /* 6 líneas de texto */
+  max-height: 10.8em;
   overflow: hidden;
 }
 
@@ -161,7 +158,6 @@
     var(--soft) 90%);
 }
 
-/* Secciones premium */
 .detail-section {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -188,7 +184,6 @@
   border-radius: 2px;
 }
 
-/* Ficha técnica mejorada */
 .ficha-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -224,7 +219,6 @@
   margin-left: 1.75rem;
 }
 
-/* Reparto super mejorado */
 .reparto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -278,7 +272,6 @@
   margin: 0;
 }
 
-/* Botón premium */
 .btn-ver {
   display: inline-flex;
   align-items: center;
@@ -320,11 +313,14 @@
   left: 100%;
 }
 
-/* Responsive avanzado */
 @media (max-width: 768px) {
   .detail-container {
     --detail-gap: 2rem;
     margin-top: 1.5rem;
+  }
+  
+  .detail-img-container {
+    max-width: 300px; /* Tamaño más pequeño para móviles */
   }
   
   .reparto-grid {
@@ -357,9 +353,12 @@
     align-items: flex-start;
     gap: 1rem;
   }
+  
+  .detail-img-container {
+    max-width: 250px; /* Tamaño aún más pequeño para móviles muy pequeños */
+  }
 }
 
-/* Modo oscuro premium */
 body.dark {
   --section-border: 1px solid rgba(214, 51, 108, 0.2);
   

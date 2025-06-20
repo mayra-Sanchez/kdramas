@@ -1,43 +1,113 @@
 .music-player {
   position: fixed;
-  top: 100px;
-  left: 100px;
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.95);
   color: white;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 0.6rem;
+  border-radius: 8px;
   z-index: 9999;
-  width: 240px;
+  width: auto;
+  max-width: 280px;
   font-family: sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .music-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 .btn-close {
   background: transparent;
   border: none;
-  color: white;
-  font-size: 1.1rem;
+  color: #aaa;
+  font-size: 0.9rem;
   cursor: pointer;
+  padding: 0 0.2rem;
+  transition: color 0.2s;
+}
+
+.btn-close:hover {
+  color: white;
 }
 
 .music-controls {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 6px;
 }
 
 button {
-  padding: 0.3rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   border: none;
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.7);
   color: white;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 0.8rem;
+  min-width: 28px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+input[type="range"] {
+  width: 80px;
+  cursor: pointer;
+}
+
+.track-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+  font-size: 0.8rem;
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+  .music-player {
+    bottom: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    top: auto !important;
+    width: auto;
+    max-width: none;
+    transform: none !important;
+  }
+  
+  .track-info {
+    max-width: calc(100% - 30px);
+  }
+  
+  .music-controls {
+    justify-content: space-between;
+  }
+  
+  input[type="range"] {
+    flex-grow: 1;
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-player {
+    padding: 0.5rem;
+  }
+  
+  .music-header {
+    font-size: 0.8rem;
+  }
+  
+  button {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
 }

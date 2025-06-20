@@ -9,23 +9,35 @@ import GenreFilter from '../../components/GenreFilter';
 const Home = () => {
   // Estados para filtros y paginación
   const [selectedGenre, setSelectedGenre] = useState("Todos");
+  const [searchQuery, setSearchQuery] = useState("");
   const [filteredReviews, setFilteredReviews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [reviewsPerPage] = useState(8); // Puedes ajustar este número
+  const [reviewsPerPage] = useState(8);
 
   // Obtener todos los géneros únicos
   const allGenres = [...new Set(reviews.flatMap((r) => r.genres))];
 
-  // Filtrar reviews cuando cambia el género seleccionado
+  // Filtrar reviews cuando cambian los filtros
   useEffect(() => {
-    if (selectedGenre === "Todos") {
-      setFilteredReviews(reviews);
-    } else {
-      setFilteredReviews(reviews.filter((r) => r.genres.includes(selectedGenre)));
+    let results = reviews;
+    
+    // Filtrar por género
+    if (selectedGenre !== "Todos") {
+      results = results.filter((r) => r.genres.includes(selectedGenre));
     }
-    // Resetear a la primera página cuando cambia el filtro
-    setCurrentPage(1);
-  }, [selectedGenre]);
+    
+    // Filtrar por búsqueda
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      results = results.filter((r) => 
+        r.title.toLowerCase().includes(query) ||
+        (r.cast && r.cast.some(actor => actor.name.toLowerCase().includes(query)))
+      );
+    }
+    
+    setFilteredReviews(results);
+    setCurrentPage(1); // Resetear a la primera página
+  }, [selectedGenre, searchQuery]);
 
   // Calcular reviews para la página actual
   const indexOfLastReview = currentPage * reviewsPerPage;
@@ -34,12 +46,15 @@ const Home = () => {
   const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage);
 
   // Cambiar página
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentPage(pageNumber);
+  };
 
   // Generar números de página para mostrar
   const getPageNumbers = () => {
     const pageNumbers = [];
-    const maxVisiblePages = 5; // Número máximo de páginas visibles
+    const maxVisiblePages = 5;
     
     if (totalPages <= maxVisiblePages) {
       for (let i = 1; i <= totalPages; i++) {
@@ -80,14 +95,29 @@ const Home = () => {
     <>
       <Navbar />
       <div className="home-container">
-        <h1 className="home-title">Explora los mejores K-Dramas</h1>
-        
         <GenreFilter
           genres={allGenres}
           activeGenre={selectedGenre}
           onSelectGenre={setSelectedGenre}
+          onSearch={setSearchQuery}
         />
         
+        {/* Mostrar mensaje si no hay resultados */}
+        {filteredReviews.length === 0 && (
+          <div className="no-results">
+            <p>No se encontraron dramas que coincidan con tu búsqueda.</p>
+            <button 
+              onClick={() => {
+                setSelectedGenre("Todos");
+                setSearchQuery("");
+              }}
+              className="reset-filters"
+            >
+              Reiniciar filtros
+            </button>
+          </div>
+        )}
+
         <div className="reviews-grid">
           {currentReviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
@@ -102,7 +132,7 @@ const Home = () => {
               disabled={currentPage === 1}
               className="pagination-button"
             >
-              Anterior
+              &larr; Anterior
             </button>
             
             <div className="page-numbers">
@@ -126,14 +156,19 @@ const Home = () => {
               disabled={currentPage === totalPages}
               className="pagination-button"
             >
-              Siguiente
+              Siguiente &rarr;
             </button>
           </div>
         )}
 
-        <div className="pagination-info">
-          Mostrando {indexOfFirstReview + 1}-{Math.min(indexOfLastReview, filteredReviews.length)} de {filteredReviews.length} dramas
-        </div>
+        {filteredReviews.length > 0 && (
+          <div className="pagination-info">
+            Mostrando {indexOfFirstReview + 1}-{Math.min(indexOfLastReview, filteredReviews.length)} de {filteredReviews.length} dramas
+            {searchQuery && (
+              <span className="search-term"> para "{searchQuery}"</span>
+            )}
+          </div>
+        )}
       </div>
       <Footer />
     </>
