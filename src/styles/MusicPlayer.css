@@ -1,0 +1,43 @@
+.music-player {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  z-index: 9999;
+  width: 240px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.music-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.music-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

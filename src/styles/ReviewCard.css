@@ -1,0 +1,325 @@
+/* ReviewCard.css - Versión Ultra Premium */
+
+.review-card {
+  --card-padding: 1.5rem;
+  --img-height: 320px;
+  --hover-elevation: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --card-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  background: var(--soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--card-transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-elevation);
+  border-color: rgba(214, 51, 108, 0.2);
+}
+
+/* Efecto de acercamiento en la imagen */
+.review-card-img-container {
+  position: relative;
+  overflow: hidden;
+  height: var(--img-height);
+}
+
+.review-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.review-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Badge de estado */
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido de la tarjeta */
+.card-body {
+  padding: var(--card-padding);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h3 {
+  margin: 0 0 0.75rem;
+  color: var(--primary);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Etiqueta de género con efecto hover */
+.genre-tag {
+  display: inline-flex;
+  background: rgba(214, 51, 108, 0.1);
+  color: var(--primary);
+  padding: 0.35rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+  transition: var(--card-transition);
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.genre-tag:hover {
+  background: rgba(214, 51, 108, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Rating con estrellas */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.rating-stars {
+  color: #FFC107;
+  font-size: 1rem;
+}
+
+.rating-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-left: 0.25rem;
+  color: var(--text);
+}
+
+/* Resumen con efecto de gradiente */
+.summary {
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+  position: relative;
+  max-height: 4.8em; /* 3 líneas de texto */
+  overflow: hidden;
+}
+
+.summary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.6em;
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0) 0%, 
+    var(--soft) 100%);
+}
+
+/* Grupos de botones mejorados */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-group-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Botones premium */
+.btn-detail {
+  flex: 1;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--card-transition);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-detail:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 51, 108, 0.3);
+}
+
+.btn-fav {
+  flex: 1;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--card-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-fav:hover {
+  background: rgba(214, 51, 108, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-fav.active {
+  background: var(--primary);
+  color: white;
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Botones de listas con iconos */
+.btn-watch {
+  flex: 1;
+  min-width: calc(50% - 0.5rem);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--card-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-watch:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-watch.active {
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.btn-watch:nth-child(1).active {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-watch:nth-child(2).active {
+  background: linear-gradient(135deg, #FFC107, #FFA000);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+  color: #333;
+}
+
+.btn-watch:nth-child(3).active {
+  background: linear-gradient(135deg, #F44336, #C62828);
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* Efecto de carga esqueleto */
+.skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive avanzado */
+@media (max-width: 768px) {
+  .review-card {
+    --img-height: 280px;
+    --card-padding: 1.25rem;
+  }
+  
+  .card-body h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group-lists {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-watch {
+    min-width: 100%;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Modo oscuro ajustes */
+body.dark .review-card {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .btn-watch {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .btn-watch:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .summary::after {
+  background: linear-gradient(to bottom, 
+    rgba(58, 58, 58, 0) 0%, 
+    var(--soft) 100%);
+}
