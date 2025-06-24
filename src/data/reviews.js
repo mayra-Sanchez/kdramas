@@ -145,7 +145,7 @@ const reviews = [
         title: "When Life Gives You Tangerines",
         genres: ["Romance", "Drama", "Vida cotidiana"],
         summary: "Una joven rebelde y un hombre reservado comparten una historia de amor que abarca tres etapas de sus vidas.",
-        image: "/assets/portadas/When Life Gives You Tangerines.png",
+        image: "/assets/portadas/When Life Gives You Tangerines.jpg",
         releaseDate: "2025-01-01",
         director: "Kwak Jae‑yong",
         writer: "Kim Eun‑hee",
@@ -205,7 +205,7 @@ const reviews = [
         "title": "Business Proposal",
         "genres": ["Romance", "Comedia"],
         "summary": "Una empleada se hace pasar por otra persona en una cita a ciegas con el CEO de su empresa, desencadenando una serie de malentendidos y un romance inesperado.",
-        "image": "/assets/portadas/Business Proposal.jpeg",
+        "image": "/assets/portadas/Business Proposal.jpg",
         "releaseDate": "2022-02-28",
         "director": "Park Seon-ho",
         "writer": "Han Seol-hee",
@@ -232,8 +232,8 @@ const reviews = [
         "episodes": 30,
         "duration": "75 min",
         "cast": [
-            { "name": "Lee Jae-wook", "image": "/cast/leejaewook.png" },
-            { "name": "Jung So-min", "image": "/cast/jungsomin.png" }
+            { "name": "Lee Jae-wook", "image": "/cast/leejaewook.jpg" },
+            { "name": "Jung So-min", "image": "/cast/jungsomin.jpg" }
         ],
         "platform": {
             "name": "Netflix",
@@ -273,7 +273,7 @@ const reviews = [
         "duration": "20 min",
         "cast": [
             { "name": "Park Seo-ham", "image": "/cast/parkseoham.jpg" },
-            { "name": "Park Jae-chan", "image": "/cast/parkjaechan.png" }
+            { "name": "Park Jae-chan", "image": "/cast/parkjaechan.jpg" }
         ],
         "platform": {
             "name": "Viki",
@@ -292,7 +292,7 @@ const reviews = [
         "episodes": 17,
         "duration": "70 min",
         "cast": [
-            { "name": "Lee Jun-ho", "image": "/cast/leejunho.png" },
+            { "name": "Lee Jun-ho", "image": "/cast/leejunho.jpg" },
             { "name": "Lee Se-young", "image": "/cast/leeseyoung.jpg" }
         ],
         "platform": {
@@ -312,7 +312,7 @@ const reviews = [
         "episodes": 20,
         "duration": "45 min",
         "cast": [
-            { "name": "Ryu Seung-ryong", "image": "/cast/ryuseungryong.png" },
+            { "name": "Ryu Seung-ryong", "image": "/cast/ryuseungryong.jpg" },
             { "name": "Han Hyo-joo", "image": "/cast/hanhyojoo.jpg" }
         ],
         "platform": {
@@ -332,7 +332,7 @@ const reviews = [
         "episodes": 16,
         "duration": "65 min",
         "cast": [
-            { "name": "Jo Bo-ah", "image": "/cast/joboah.png" },
+            { "name": "Jo Bo-ah", "image": "/cast/joboah.jpg" },
             { "name": "Rowoon", "image": "/cast/rowoon.jpg" }
         ],
         "platform": {
@@ -550,8 +550,7 @@ const reviews = [
             "name": "Netflix",
             "url": "https://www.netflix.com/title/81318872"
         }
-    }
-    ,
+    },
     {
         "id": 28,
         "title": "Un amor loco",
@@ -587,15 +586,14 @@ const reviews = [
         "episodes": 16,
         "duration": "60 min",
         "cast": [
-            { "name": "So Ji-sub", "image": "/cast/sojisub.png" },
+            { "name": "So Ji-sub", "image": "/cast/sojisub.jpg" },
             { "name": "Shin Min-a", "image": "/cast/shinmina.jpg" }
         ],
         "platform": {
             "name": "Netflix",
             "url": "https://www.netflix.com/title/80055200"
         }
-    }
-    ,
+    },
     {
         "id": 30,
         "title": "Las inclemencias del amor",
@@ -699,9 +697,9 @@ const reviews = [
         "cast": [
             { "name": "Go Youn-jung", "image": "/cast/goyounjung.jpg" },
             { "name": "Shin Si-ah", "image": "/cast/shinsiha.jpg" },
-            { "name": "Han Ye-ji", "image": "/cast/hanyeji.jpeg" },
+            { "name": "Han Ye-ji", "image": "/cast/hanyeji.jpg" },
             { "name": "Kang Yoo-seok", "image": "/cast/kangyooseok.jpg" },
-            { "name": "Jung Joon-won", "image": "/cast/jungjoonwon.jpeg" }
+            { "name": "Jung Joon-won", "image": "/cast/jungjoonwon.jpg" }
         ],
         "platform": {
             "name": "Netflix",
@@ -775,7 +773,301 @@ const reviews = [
         }
 
 
+    },
+    {
+        "id": 38,
+        "title": "Aún así",
+        "originalTitle": "Nevertheless",
+        "genres": ["Romance", "Drama", "Amor universitario"],
+        "summary": "Una estudiante de arte que ya no quiere enamorarse se encuentra con un hombre encantador que huye del compromiso, desafiando sus propias convicciones.",
+        "image": "/assets/portadas/aunasi.jpg",
+        "releaseDate": "2021-06-19",
+        "director": "Kim Ga-ram",
+        "writer": "Jung Won",
+        "episodes": 10,
+        "duration": "70 min",
+        "cast": [
+            { "name": "Han So-hee", "image": "/cast/hansohee.jpg" },
+            { "name": "Song Kang", "image": "/cast/songkang.jpg" },
+            { "name": "Chae Jong-hyeop", "image": "/cast/chaejonghyeop.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81435649"
+        }
     }
+    ,
+    {
+        "id": 39,
+        "title": "Novata clandestina",
+        "originalTitle": "Backstreet Rookie",
+        "genres": ["Comedia romántica", "Drama", "Webtoon"],
+        "summary": "Una chica energética consigue un trabajo en una tienda de conveniencia manejada por su antiguo amor de la secundaria, desencadenando situaciones románticas y cómicas.",
+        "image": "/assets/portadas/novataclandestina.jpg",
+        "releaseDate": "2020-06-19",
+        "director": "Lee Myoung-woo",
+        "writer": "Son Geun-joo",
+        "episodes": 16,
+        "duration": "70 min",
+        "cast": [
+            { "name": "Ji Chang-wook", "image": "/cast/jichangwook.jpg" },
+            { "name": "Kim Yoo-jung", "image": "/cast/kimyoojung.jpg" },
+            { "name": "Han Sun-hwa", "image": "/cast/hansunhwa.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81465196"
+        }
+    }
+    , {
+        "id": 40,
+        "title": "La belleza de Gangnam",
+        "originalTitle": "My ID Is Gangnam Beauty",
+        "genres": ["Romance", "Comedia juvenil", "Drama universitario"],
+        "summary": "Tras operarse la nariz para evitar el acoso, una universitaria entra en un nuevo entorno, donde aprende que la verdadera belleza está en la aceptación y el amor propio.",
+        "image": "/assets/portadas/labellezagangnam.jpg",
+        "releaseDate": "2018-07-27",
+        "director": "Choi Sung-bum",
+        "writer": "Choi Soo-young",
+        "episodes": 16,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Im Soo-hyang", "image": "/cast/imsoo-hyang.jpg" },
+            { "name": "Cha Eun-woo", "image": "/cast/chaeunwoo.jpg" },
+            { "name": "Jo Woo-ri", "image": "/cast/jowoori.jpg" },
+            { "name": "Kwak Dong-yeon", "image": "/cast/kwakdongyeon.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81030026"
+        }
+    }
+    , {
+        "id": 41,
+        "title": "Un caballero y una joven dama",
+        "originalTitle": "Young Lady and Gentleman",
+        "genres": ["Romance", "Drama familiar"],
+        "summary": "Una joven se convierte en tutora de tres hijos de un viudo y termina redescubriendo el amor y lazos familiares en su hogar.",
+        "image": "/assets/portadas/uncaballerounajovendama.jpg",
+        "releaseDate": "2021-09-25",
+        "director": "Shin Chang-seok",
+        "writer": "Kim Sa-kyung",
+        "episodes": 52,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Ji Hyun-woo", "image": "/cast/jihyunwoo.jpg" },
+            { "name": "Lee Se-hee", "image": "/cast/leesehee.jpg" },
+            { "name": "Kang Eun-tak", "image": "/cast/kangeuntak.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81609154"
+        }
+    }
+    , {
+        "id": 42,
+        "title": "Cautivar a un rey",
+        "originalTitle": "Captivating the King",
+        "genres": ["Histórico", "Romance", "Melodrama"],
+        "summary": "En un palacio lleno de intrigas políticas, una reina desea venganza y encuentra el amor inesperadamente con el rey.",
+        "image": "/assets/portadas/cautivarrey.jpg",
+        "releaseDate": "2024-01-21",
+        "director": "Cho Nam-guk",
+        "writer": "Kim Seon-deok",
+        "episodes": 16,
+        "duration": "70 min",
+        "cast": [
+            { "name": "Jo Jung-suk", "image": "/cast/jojungsuk.jpg" },
+            { "name": "Shin Se-kyung", "image": "/cast/shinsekyung.jpg" },
+            { "name": "Lee Shin-young", "image": "/cast/leeshinyoung.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81742988"
+        }
+    }
+    , {
+        "id": 43,
+        "title": "El príncipe del café",
+        "originalTitle": "Coffee Prince",
+        "genres": ["Romance", "Comedia", "Drama"],
+        "summary": "Un heredero frío contrata a una joven andrógina que él cree hombre para trabajar en su cafetería, y termina enamorándose sin saber su verdadero género.",
+        "image": "/assets/portadas/elpríncipedelcafe.jpg",
+        "releaseDate": "2007-07-02",
+        "director": "Lee Yoon-jung",
+        "writer": "Lee Yoon-jung, Lee Jeong-ah, Jang Hyeon-ju",
+        "episodes": 17,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Gong Yoo", "image": "/cast/gongyoo.jpg" },
+            { "name": "Yoon Eun-hye", "image": "/cast/yooneunhye.jpg" },
+            { "name": "Lee Sun-kyun", "image": "/cast/leesunkyoon.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/80029647"
+        }
+    }
+    , {
+        "id": 44,
+        "title": "El nacimiento de una belleza",
+        "originalTitle": "Birth of a Beauty",
+        "genres": ["Melodrama", "Revancha", "Romance"],
+        "summary": "Tras ser traicionada por su esposo, una mujer sufre un accidente, renace con nueva identidad y busca venganza enamorándose de nuevo.",
+        "image": "/assets/portadas/elnacimientobelleza.jpg",
+        "releaseDate": "2014-11-01",
+        "director": "Lee Chang-min, Park Sun-ho",
+        "writer": "Yoon Young-mi",
+        "episodes": 21,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Han Ye-sul", "image": "/cast/hanyeseul.jpg" },
+            { "name": "Joo Sang-wook", "image": "/cast/joosangwook.jpg" },
+            { "name": "Jung Gyu-woon", "image": "/cast/jungguyun.jpg" },
+            { "name": "Wang Ji-hye", "image": "/cast/wangjihye.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/80999059"
+        }
+    }
+    , {
+        "id": 45,
+        "title": "La vida fabulosa",
+        "originalTitle": "The Fabulous",
+        "genres": ["Romance", "Comedia", "Moda"],
+        "summary": "Cuatro amigos en la competitiva industria de la moda navegan entre el trabajo, el amor y sus propias inseguridades en Seúl.",
+        "image": "/assets/portadas/vidafabulosa.jpg",
+        "releaseDate": "2022-12-23",
+        "director": "Kim Jung-hyun",
+        "writer": "Kim Ji-hee, Im Jin-sun",
+        "episodes": 8,
+        "duration": "45–60 min",
+        "cast": [
+            { "name": "Chae Soo-bin", "image": "/cast/chaesoobin.jpg" },
+            { "name": "Choi Min-ho", "image": "/cast/ChoiMinho.jpg" },
+            { "name": "Lee Sang-woon", "image": "/cast/leesangwoon.jpg" },
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81406881"
+        }
+    }
+    , {
+        "id": 46,
+        "title": "Mi adorable secretaria",
+        "originalTitle": "The Secret Life of My Secretary",
+        "genres": ["Comedia romántica", "Workplace Romance"],
+        "summary": "Un ejecutivo sufre prosopagnosia tras un ataque. Confunde a su secretaria con una figura famosa y se enamora de ella mientras ella asume su identidad.",
+        "image": "/assets/portadas/adorablesecretaria.jpg",
+        "releaseDate": "2019-05-06",
+        "director": "Lee Kwang-young",
+        "writer": "Kim Ah-jung",
+        "episodes": 32,
+        "duration": "35 min",
+        "cast": [
+            { "name": "Kim Young-kwang", "image": "/cast/kimyoungkwang.jpg" },
+            { "name": "Jin Ki-joo", "image": "/cast/jinki-joo.jpg" },
+            { "name": "Kim Jae-kyung", "image": "/cast/kimjaekyung.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81224991"
+        }
+    }
+    ,
+    {
+        "id": 47,
+        "title": "Cuando el teléfono suena",
+        "originalTitle": "When the Phone Rings",
+        "genres": ["Thriller romántico", "Drama", "Misterio"],
+        "summary": "Un político y su esposa muda viven en un matrimonio sin amor hasta que un secuestro rompe su rutina y pone a prueba su relación.",
+        "image": "/assets/portadas/telefonosuena.jpg",
+        "releaseDate": "2024-11-22",
+        "director": "Park Sang-woo, Wi Deuk-gyu",
+        "writer": "Kim Ji-woon",
+        "episodes": 12,
+        "duration": "64–70 min",
+        "cast": [
+            { "name": "Yoo Yeon-seok", "image": "/cast/yooyeonseok.jpg" },
+            { "name": "Chae Soo-bin", "image": "/cast/chaesoobin.jpg" },
+            { "name": "Heo Nam-jun", "image": "/cast/heonamjun.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81912961"
+        }
+    }
+    ,
+    {
+        "id": 48,
+        "title": "Mi adorable demonio",
+        "originalTitle": "My Demon",
+        "genres": ["Fantasía romántica", "Melodrama", "Romance"],
+        "summary": "Una chaebol arrogante entra en un matrimonio por contrato con un demonio de 200 años. Comienza cuando él pierde sus poderes y necesita protegerla para sobrevivir.",
+        "image": "/assets/portadas/adorabledemonio.jpg",
+        "releaseDate": "2023-11-27",
+        "director": "Kim Jang-han, Kwon Da-som",
+        "writer": "Kim Sun-mi",
+        "episodes": 16,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Kim Yoo-jung", "image": "/cast/kimyoojung.jpg" },
+            { "name": "Song Kang", "image": "/cast/songkang.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81900021"
+        }
+    }
+    ,
+    {
+        "id": 49,
+        "title": "Amor en la puerta de al lado",
+        "originalTitle": "Love Next Door",
+        "genres": ["Romance", "Comedia", "Drama"],
+        "summary": "Una mujer intenta rehacer su vida tras una crisis personal y se reencuentra con un amigo de la infancia, despertando viejas emociones y sentimientos nuevos.",
+        "image": "/assets/portadas/amorpuertalado.jpg",
+        "releaseDate": "2024-08-17",
+        "director": "Yoo Je-won",
+        "writer": "Shin Ha-eun",
+        "episodes": 16,
+        "duration": "65 min",
+        "cast": [
+            { "name": "Jung Hae-in", "image": "/cast/junghaein.jpg" },
+            { "name": "Jung So-min", "image": "/cast/jungsomin.jpg" },
+            { "name": "Kim Ji-eun", "image": "/cast/kimjieun.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81739044"
+        }
+    }
+    ,
+    {
+        "id": 50,
+        "title": "Amor bajo la luz de la luna",
+        "originalTitle": "Love in the Moonlight",
+        "genres": ["Histórico", "Romance", "Comedia"],
+        "summary": "Durante la dinastía Joseon, una joven se disfraza de eunuco para sobrevivir y se convierte en confidente del príncipe heredero, quien termina enamorándose de ella.",
+        "image": "/assets/portadas/amorbajoluna.jpg",
+        "releaseDate": "2016-08-22",
+        "director": "Kim Sung-yoon, Baek Sang-hoon",
+        "writer": "Kim Min-jeong, Lim Ye-jin",
+        "episodes": 19,
+        "duration": "60 min",
+        "cast": [
+            { "name": "Park Bo-gum", "image": "/cast/parkbogum.jpg" },
+            { "name": "Kim Yoo-jung", "image": "/cast/kimyoojung.jpg" },
+            { "name": "Chae Soo-bin", "image": "/cast/chaesoobin.jpg" },
+            { "name": "Kwak Dong-yeon", "image": "/cast/kwakdongyeon.jpg" }
+        ],
+        "platform": {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/80986896"
+        }
+    }
+    ,
 
 ];
 

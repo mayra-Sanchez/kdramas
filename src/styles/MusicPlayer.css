@@ -1,77 +1,125 @@
+:root {
+  --player-bg: rgba(34, 34, 34, 0.95);
+  --player-text: #fff;
+  --player-muted: #aaa;
+  --player-hover: #fff;
+  --player-btn-bg: rgba(68, 68, 68, 0.7);
+  --player-btn-hover: #555;
+  --player-radius: 10px;
+  --player-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --player-blur: 6px;
+  --player-padding: 0.75rem;
+}
+
+/* 🔲 Contenedor principal */
 .music-player {
   position: fixed;
-  background-color: rgba(34, 34, 34, 0.95);
-  color: white;
-  padding: 0.6rem;
-  border-radius: 8px;
+  bottom: 100px;
+  left: 100px;
+  background-color: var(--player-bg);
+  color: var(--player-text);
+  padding: var(--player-padding);
+  border-radius: var(--player-radius);
   z-index: 9999;
   width: auto;
   max-width: 280px;
-  font-family: sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: var(--player-shadow);
+  backdrop-filter: blur(var(--player-blur));
   transition: all 0.3s ease;
+  user-select: none;
 }
 
+/* 🎵 Cabecera con título o control */
 .music-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
   font-size: 0.85rem;
-  cursor: pointer;
+  margin-bottom: 6px;
+  cursor: move;
 }
 
+/* ❌ Botón cerrar */
 .btn-close {
   background: transparent;
   border: none;
-  color: #aaa;
-  font-size: 0.9rem;
+  color: var(--player-muted);
+  font-size: 0.95rem;
   cursor: pointer;
-  padding: 0 0.2rem;
-  transition: color 0.2s;
+  padding: 0 0.3rem;
+  transition: color 0.2s ease;
 }
 
 .btn-close:hover {
-  color: white;
+  color: var(--player-hover);
 }
 
+/* 🎚️ Controles */
 .music-controls {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
 }
 
-button {
-  padding: 0.25rem 0.5rem;
+/* 🎛️ Botones (play, next, prev, etc.) */
+.music-controls button {
+  padding: 0.3rem 0.6rem;
   border: none;
-  background-color: rgba(68, 68, 68, 0.7);
-  color: white;
-  border-radius: 4px;
+  background-color: var(--player-btn-bg);
+  color: var(--player-text);
+  border-radius: 6px;
   cursor: pointer;
   font-size: 0.8rem;
-  min-width: 28px;
+  min-width: 30px;
   text-align: center;
+  transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: #555;
+.music-controls button:hover {
+  background-color: var(--player-btn-hover);
 }
 
-input[type="range"] {
+/* 🔉 Volumen y progreso */
+.music-controls input[type="range"] {
   width: 80px;
+  cursor: pointer;
+  appearance: none;
+  height: 4px;
+  background: #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.music-controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
   cursor: pointer;
 }
 
+.music-controls input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* 🎵 Info de la canción */
 .track-info {
+  font-size: 0.8rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 180px;
-  font-size: 0.8rem;
+  color: var(--player-text);
 }
 
-/* Estilos específicos para móviles */
+/* 📱 Móviles */
 @media (max-width: 768px) {
   .music-player {
     bottom: 10px !important;
@@ -81,33 +129,38 @@ input[type="range"] {
     width: auto;
     max-width: none;
     transform: none !important;
+    border-radius: var(--radius-md);
   }
-  
-  .track-info {
-    max-width: calc(100% - 30px);
-  }
-  
+
   .music-controls {
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  
-  input[type="range"] {
-    flex-grow: 1;
+
+  .track-info {
+    max-width: calc(100% - 40px);
+  }
+
+  .music-controls input[type="range"] {
     max-width: 100px;
+    flex-grow: 1;
   }
 }
 
+/* 📱 Teléfonos pequeños */
 @media (max-width: 480px) {
   .music-player {
-    padding: 0.5rem;
+    padding: 0.6rem;
   }
-  
+
   .music-header {
     font-size: 0.8rem;
   }
-  
-  button {
-    padding: 0.2rem 0.4rem;
+
+  .music-controls button {
+    padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
+    min-width: 26px;
   }
 }

@@ -39,11 +39,63 @@
   color: var(--primary);
 }
 
+.genre-scroller {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.scroll-button {
+  background: var(--soft);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.2s ease;
+  z-index: 2;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.scroll-button:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.scroll-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.scroll-button.left {
+  margin-right: 8px;
+}
+
+.scroll-button.right {
+  margin-left: 8px;
+}
+
 .genre-filter {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--space-sm);
-  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  white-space: nowrap;
+  width: 100%;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+}
+
+.genre-filter::-webkit-scrollbar {
+  display: none;
 }
 
 .genre-filter button {
@@ -55,6 +107,7 @@
   color: var(--primary);
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .genre-filter button:hover {
@@ -91,5 +144,15 @@
   
   .search-icon {
     left: 0.5rem;
+  }
+
+  .scroll-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .scroll-button svg {
+    width: 14px;
+    height: 14px;
   }
 }

@@ -4,13 +4,17 @@
   margin: 0 auto;
 }
 
+/* 🎯 Título principal */
 .home-title {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   text-align: center;
   margin-bottom: var(--space-lg);
   color: var(--primary);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
+/* 🧱 Rejilla de reseñas */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -18,8 +22,7 @@
   padding: 0 var(--space-md);
 }
 
-/* Estilos de paginación */
-
+/* 🔢 Paginación general */
 .pagination-container {
   display: flex;
   justify-content: center;
@@ -29,6 +32,7 @@
   flex-wrap: wrap;
 }
 
+/* Botones de navegación (Anterior, Siguiente) */
 .pagination-button {
   padding: 0.75rem 1.25rem;
   background: var(--soft);
@@ -36,14 +40,15 @@
   color: var(--primary);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.3s ease;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .pagination-button:hover:not(:disabled) {
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 51, 108, 0.2);
 }
 
 .pagination-button:disabled {
@@ -51,22 +56,26 @@
   cursor: not-allowed;
   border-color: #ccc;
   color: #ccc;
+  box-shadow: none;
 }
 
+/* 🔘 Números de página */
 .page-numbers {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .page-number {
   width: 40px;
   height: 40px;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: var(--soft);
-  border: 1px solid #eee;
+  border: 1px solid #e0e0e0;
   color: var(--text);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -84,15 +93,18 @@
   font-weight: 600;
 }
 
+/* … Ellipsis */
 .page-ellipsis {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   color: var(--text);
+  opacity: 0.6;
 }
 
+/* ℹ️ Info extra de paginación */
 .pagination-info {
   text-align: center;
   color: color-mix(in srgb, var(--text) 60%, transparent);
@@ -100,20 +112,20 @@
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* 📱 Responsive */
 @media (max-width: 768px) {
   .pagination-container {
     gap: 0.5rem;
   }
-  
+
   .pagination-button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
-  
+
   .page-number {
     width: 35px;
     height: 35px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }

@@ -132,7 +132,7 @@ const Home = () => {
               disabled={currentPage === 1}
               className="pagination-button"
             >
-              &larr; Anterior
+              Anterior
             </button>
             
             <div className="page-numbers">
@@ -156,7 +156,7 @@ const Home = () => {
               disabled={currentPage === totalPages}
               className="pagination-button"
             >
-              Siguiente &rarr;
+              Siguiente 
             </button>
           </div>
         )}

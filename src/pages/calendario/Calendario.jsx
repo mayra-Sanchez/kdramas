@@ -19,23 +19,31 @@ const Calendario = () => {
   return (
     <>
       <Navbar />
-      <div className="calendar-container">
-        <h2>📅 Calendario de estrenos K-Drama</h2>
-        <Calendar onChange={setValue} value={value} />
+      <div className="calendar-page-container">
+        <div className="calendar-wrapper">
+          <h2>📅 Calendario de estrenos K-Drama</h2>
+          <div className="calendar-container">
+            <Calendar 
+              onChange={setValue} 
+              value={value}
+              locale="es-ES" // Opcional: para español
+            />
+          </div>
 
-        <div className="estrenos">
-          <h3>Dramas que estrenan el {value.toLocaleDateString()}</h3>
-          <div className="dramas-grid">
-            {getDramasForDate(value).length === 0 ? (
-              <p>No hay estrenos en esta fecha.</p>
-            ) : (
-              getDramasForDate(value).map((r) => (
-                <div key={r.id} className="drama-item">
-                  <img src={r.image} alt={r.title} />
-                  <p>{r.title}</p>
-                </div>
-              ))
-            )}
+          <div className="estrenos">
+            <h3>Dramas que estrenan el {value.toLocaleDateString('es-ES')}</h3>
+            <div className="dramas-grid">
+              {getDramasForDate(value).length === 0 ? (
+                <p>No hay estrenos en esta fecha.</p>
+              ) : (
+                getDramasForDate(value).map((r) => (
+                  <div key={r.id} className="drama-item">
+                    <img src={r.image} alt={r.title} />
+                    <p>{r.title}</p>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
